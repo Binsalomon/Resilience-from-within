@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy for Social Transformation</title>
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo"><img src="img/wh-removebg-preview.png" alt="" style="background-color: white; border-radius: 250px;"></div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="dropdown">
+                <a href="program.html">Programs</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+<br>
+<br>
+<br>
+
+    <div class="container">
+        <header>
+            <h1>Contact Us</h1>
+        </header>
+
+        <section class="contact-info">
+            <h2>Our Location</h2>
+            <p>Visit us at: <strong>Plot 9, Eriza Lakor Road, Gulu, Uganda</strong></p>
+
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15741.570494706417!2d32.2925736!3d2.7743957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x194b4010fc5591cf%3A0x313f2255cf7c0c4a!2sPlot%209%2C%20Eriza%20Lakor%20Road%2C%20Gulu%2C%20Uganda!5e0!3m2!1sen!2sug!4v1672944969441!5m2!1sen!2sug"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="contact-details">
+                <h2>Contact Details</h2>
+                <p><strong>Phone:</strong> +256 701 234 567, +256 772 345 678</p>
+                <p><strong>Email:</strong> info@yourcompany.com</p>
+                <p><strong>Follow Us:</strong></p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook">F</a>
+                    <a href="https://www.twitter.com" target="_blank" title="Twitter">T</a>
+                    <a href="https://www.instagram.com" target="_blank" title="Instagram">I</a>
+                    <a href="https://www.linkedin.com" target="_blank" title="LinkedIn">L</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form id="contact-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert('Your message has been sent!');
+                document.getElementById('contact-form').reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+
+
+<br>
+<br>
+<br>
+
+    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section contact-info">
+                <h4>Contact Us</h4>
+                <p>
+                    <a href="https://www.google.com/maps?q=Plot+9,+Eriza+Lakor+Road,+Gulu,+Uganda" target="_blank">
+                        Address: Plot 9, Eriza Lakor Road, Gulu, Uganda
+                    </a>
+                </p>
+                <p>Phone: <a href="tel:+256774808546">+256 774 808546</a></p>
+                <p>Email: <a href="mailto:fkumakech4@gmail.com">fkumakech4@gmail.com</a></p>
+            </div>
+    
+            <div class="footer-section social-media">
+                <h4>Follow Us</h4>
+                <div class="social-icons" style="font-size: 25px;">
+                    <a href="#" class="social-icon" id="facebook" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" class="social-icon" id="twitter" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon" id="instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" id="linkedin" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <h3 style="color: white;">Donate</h3>
+                <a href="donate.html" aria-label="Donate">
+                    <img src="img/donate.png" alt="Donate" style="width: 70px; border-radius: 5px;">
+                </a>
+            </div>
+    
+            <div class="footer-section call-to-action">
+                <h4>Join Our Mission</h4>
+                <p>Help us empower communities in Northern Uganda.</p>
+                <button onclick="subscribe()">Subscribe</button>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Resilience from Within. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        function subscribe() {
+            alert("Thank you for subscribing! Stay updated with our mission.");
+        }
+    </script>
+    
+    
+    </body>
+    </html>
+    

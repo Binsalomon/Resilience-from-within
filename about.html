@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy for Social Transformation</title>
+    <link rel="stylesheet" href="about.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <script defer src="scripts.js"></script>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="img/wh-removebg-preview.png" alt=" about" style="background-color: white; border-radius: 250px;"></div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="dropdown">
+                <a href="program.html">Programs</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="heeed">
+        <div class="cont">
+            <div class="par">
+                <h1 style="color: rgba(255, 255, 255, 0.8); font-weight: bold; font-size: 50px;height: 80px; ">About Us </h1>
+                <img src="img/wh-removebg-preview.png" alt="" style="width: 400px; background-color: rgba(239, 235, 235, 10); border-radius: 250px;" >
+                <p style="color: #f1f1f1;"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="paragraph-container">
+        <p>
+            <span>Resilience from Within</span> offers a comprehensive and sustainable approach to addressing the economic and mental health challenges faced by women and youth in Northern Uganda. Through a combination of mindfulness practices, business development training, value-added agricultural skills and provision of access to agricultural innovation and input, the program aims to build inner strength and foster outer change within the community. By empowering participants with the tools to develop micro-enterprises, equipping them to process and market their agricultural products, and providing mental health support, this initiative addresses the root causes of poverty, unemployment, and trauma.
+        </p>
+        <p>
+            The program’s holistic approach focuses on cultivating both economic resilience and emotional well-being, ensuring that participants can lead empowered lives and contribute meaningfully to the rebuilding of their communities. Additionally, with a clear plan for sustainability through revenue-generating activities, partnerships, and diverse funding streams, <span>“Resilience from Within”</span> promises lasting impact beyond its initial phase.
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.querySelectorAll(".paragraph-container");
+
+            function onScroll() {
+                elements.forEach((el) => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        el.classList.add("scrolled");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", onScroll);
+            onScroll(); 
+        });
+    </script>
+
+    
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section contact-info">
+            <h4>Contact Us</h4>
+            <p>
+                <a href="https://www.google.com/maps?q=Plot+9,+Eriza+Lakor+Road,+Gulu,+Uganda" target="_blank">
+                    Address: Plot 9, Eriza Lakor Road, Gulu, Uganda
+                </a>
+            </p>
+            <p>Phone: <a href="tel:+256774808546">+256 774 808546</a></p>
+            <p>Email: <a href="mailto:fkumakech4@gmail.com">fkumakech4@gmail.com</a></p>
+        </div>
+
+        <div class="footer-section social-media">
+            <h4>Follow Us</h4>
+            <div class="social-icons" style="font-size: 25px;">
+                <a href="#" class="social-icon" id="facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="social-icon" id="twitter" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon" id="instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" id="linkedin" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <h3 style="color: white;">Donate</h3>
+            <a href="donate.html" aria-label="Donate">
+                <img src="img/donate.png" alt="Donate" style="width: 70px; border-radius: 5px;">
+            </a>
+        </div>
+
+        <div class="footer-section call-to-action">
+            <h4>Join Our Mission</h4>
+            <p>Help us empower communities in Northern Uganda.</p>
+            <button onclick="subscribe()">Subscribe</button>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 Resilience from Within. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    function subscribe() {
+        alert("Thank you for subscribing! Stay updated with our mission.");
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Page</title>
+    <link rel="stylesheet" href="donate .css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    
+</head>
+<body>
+    
+
+    <nav class="navbar">
+        <div class="logo"><img src="img/wh-removebg-preview.png" alt="" style="background-color: white; border-radius: 250px;"></div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li class="dropdown">
+                <a href="program.html">Programs</a>
+                <ul class="dropdown-menu">
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+<br>
+        <h1 style="text-align: center;color: rgb(196, 196, 196);">Make a Donation</h1>
+        <p style="text-align: center;color: rgb(196, 196, 196);">Select your preferred donate method and help us achieve our goals!</p>
+        <br>
+    
+
+    <main>
+        <form id="donation-form">
+            <label for="donation-amount">Donation Amount:</label>
+            <input type="number" id="donation-amount" name="amount" placeholder="Enter amount" required>
+
+            <label for="payment-method">Choose donate Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="visa">Visa Card</option>
+                <option value="mobile-money">Mobile Money</option>
+                <option value="coca-cola">Coca-Cola Rewards</option>
+                <option value="payway">PayWay</option>
+                <option value="bank-card">Bank Card</option>
+            </select>
+
+            <div id="additional-details">
+            </div>
+
+            <button type="submit">Donate Now</button>
+            <button type="button" class="back-button" id="go-back">Go Back</button>
+        </form>
+    </main>
+
+   
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const paymentMethod = document.getElementById("payment-method");
+            const additionalDetails = document.getElementById("additional-details");
+            const goBackButton = document.getElementById("go-back");
+
+            paymentMethod.addEventListener("change", (e) => {
+                const method = e.target.value;
+
+                additionalDetails.innerHTML = "";
+
+                if (method === "visa" || method === "bank-card") {
+                    additionalDetails.innerHTML = `
+                        <label for="card-number">Card Number:</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" required>
+
+                        <label for="expiry-date">Expiry Date:</label>
+                        <input type="month" id="expiry-date" name="expiry-date" required>
+
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+                    `;
+                } else if (method === "mobile-money") {
+                    additionalDetails.innerHTML = `
+                        <label for="mobile-number">Mobile Number:</label>
+                        <input type="tel" id="mobile-number" name="mobile-number" placeholder="Enter your mobile number" required>
+                    `;
+                } else if (method === "coca-cola") {
+                    additionalDetails.innerHTML = `
+                        <label for="rewards-code">Rewards Code:</label>
+                        <input type="text" id="rewards-code" name="rewards-code" placeholder="Enter your Coca-Cola rewards code" required>
+                    `;
+                } else if (method === "payway") {
+                    additionalDetails.innerHTML = `
+                        <label for="payway-reference">PayWay Reference:</label>
+                        <input type="text" id="payway-reference" name="payway-reference" placeholder="Enter your PayWay reference" required>
+                    `;
+                }
+            });
+
+            goBackButton.addEventListener("click", () => {
+                paymentMethod.value = "";
+                additionalDetails.innerHTML = "";
+            });
+
+            const donationForm = document.getElementById("donation-form");
+            donationForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                alert("Thank you for your donation!");
+            });
+        });
+    </script>
+<br>
+<br>
+<br>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-section contact-info">
+            <h4>Contact Us</h4>
+            <p>
+                <a href="https://www.google.com/maps?q=Plot+9,+Eriza+Lakor+Road,+Gulu,+Uganda" target="_blank">
+                    Address: Plot 9, Eriza Lakor Road, Gulu, Uganda
+                </a>
+            </p>
+            <p>Phone: <a href="tel:+256774808546">+256 774 808546</a></p>
+            <p>Email: <a href="mailto:fkumakech4@gmail.com">fkumakech4@gmail.com</a></p>
+        </div>
+
+        <div class="footer-section social-media">
+            <h4>Follow Us</h4>
+            <div class="social-icons" style="font-size: 25px;">
+                <a href="#" class="social-icon" id="facebook" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="social-icon" id="twitter" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon" id="instagram" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon" id="linkedin" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <h3 style="color: white;">Donate</h3>
+            <a href="donate.html" aria-label="Donate">
+                <img src="img/donate.png" alt="Donate" style="width: 70px; border-radius: 5px;">
+            </a>
+        </div>
+
+        <div class="footer-section call-to-action">
+            <h4>Join Our Mission</h4>
+            <p>Help us empower communities in Northern Uganda.</p>
+            <button onclick="subscribe()">Subscribe</button>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 Resilience from Within. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    function subscribe() {
+        alert("Thank you for subscribing! Stay updated with our mission.");
+    }
+</script>
+
+
+</body>
+</html>
